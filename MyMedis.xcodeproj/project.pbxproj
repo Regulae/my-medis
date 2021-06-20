@@ -11,6 +11,7 @@
 		33910D37267F38F9000CBC98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D36267F38F9000CBC98 /* ContentView.swift */; };
 		33910D39267F38FE000CBC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33910D38267F38FE000CBC98 /* Assets.xcassets */; };
 		33910D3C267F38FE000CBC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33910D3B267F38FE000CBC98 /* Preview Assets.xcassets */; };
+		33910D45267F3CDC000CBC98 /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D44267F3CDC000CBC98 /* MedicationOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		33910D38267F38FE000CBC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33910D3B267F38FE000CBC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		33910D3D267F38FE000CBC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33910D44267F3CDC000CBC98 /* MedicationOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,8 @@
 		33910D33267F38F9000CBC98 /* MyMedis */ = {
 			isa = PBXGroup;
 			children = (
+				33910D43267F3C9A000CBC98 /* Views */,
 				33910D34267F38F9000CBC98 /* MyMedisApp.swift */,
-				33910D36267F38F9000CBC98 /* ContentView.swift */,
 				33910D38267F38FE000CBC98 /* Assets.xcassets */,
 				33910D3D267F38FE000CBC98 /* Info.plist */,
 				33910D3A267F38FE000CBC98 /* Preview Content */,
@@ -67,6 +69,15 @@
 				33910D3B267F38FE000CBC98 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		33910D43267F3C9A000CBC98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33910D36267F38F9000CBC98 /* ContentView.swift */,
+				33910D44267F3CDC000CBC98 /* MedicationOverview.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33910D37267F38F9000CBC98 /* ContentView.swift in Sources */,
+				33910D45267F3CDC000CBC98 /* MedicationOverview.swift in Sources */,
 				33910D35267F38F9000CBC98 /* MyMedisApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
