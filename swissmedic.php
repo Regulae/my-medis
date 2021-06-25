@@ -4,28 +4,8 @@
 // increase memory limit since the XML file is quite large
 ini_set('memory_limit', '2048M');
 
-/*
-create table medications
-(
-    title text not null,
-    authHolder text not null,
-    atcCode text,
-    substances text,
-    authNrs text,
-    remark text,
-    style text not null,
-    content text not null,
-    sections text,
-    type text,
-    version text,
-    lang text,
-    safetyRelevant integer,
-    informationUpdate text
-);
- */
-
 // simple progress bar function
-function progress_bar(int $done, int $total, string $info = "", int $width = 100): string
+function progress_bar(int $done, int $total, string $info = "", int $width = 50): string
 {
     $perc = round(($done * 100) / $total);
     $bar = ceil(($width * $perc) / 100);
@@ -47,9 +27,9 @@ function usage(): void
 You need to provide a source and a target file
     \033[1;37m-s\033[0m source xml file
     \033[1;37m-t\033[0m location of the sqllite db
-    
+
 \033[1;31mWarning\033[0;31m: Any existing data will be lost!\033[0m
-    
+
  => download the source file from: https://download.swissmedicinfo.ch/
 
 example usage:
