@@ -10,12 +10,23 @@ import SwiftUI
 struct MedicationOverview: View {
     var body: some View {
         VStack(alignment: .leading){
-            Text("Morgen")
+            Text("Morning")
                 .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(.bold)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text("Lunch")
+                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text("Evening")
+                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text("Night")
+                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
+                .fontWeight(.medium)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding()
     }
 }
 
