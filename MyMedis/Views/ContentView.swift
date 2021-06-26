@@ -33,7 +33,7 @@ struct ContentView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             MedicationOverview()
-        
+            SwissmedicMedicationsView()
             Spacer()
 
         }
@@ -44,5 +44,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(ModelData())
     }
 }
