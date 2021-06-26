@@ -10,6 +10,10 @@ import SwiftUI
 struct MedicationOverview: View {
     var body: some View {
         VStack(alignment: .leading){
+            Text("Today")
+                .font(.title)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text("Morning")
                 .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
                 .fontWeight(.medium)

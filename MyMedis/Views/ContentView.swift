@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Tab = .medicationOverview
+    
+    enum Tab{
+        case medicationOverview
+        case medicationList
+    }
+    
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(named: "red")
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white.withAlphaComponent(0.6)
+    }
+    
     var body: some View {
         VStack{
             HStack(alignment: .center){
@@ -28,16 +40,16 @@ struct ContentView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            Text("Today")
-                .font(.title)
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            MedicationOverview()
-            SwissmedicMedicationsView()
-            Spacer()
-
+            TabView(selection: $selection){
+                MedicationOverview()
+                    .tabItem { Label("Featured", systemImage: "calendar" )}
+                    .tag(Tab.medicationOverview)
+                SwissmedicMedicationsView()
+                    .tabItem { Label("List", systemImage: "list.bullet") }
+                    .tag(Tab.medicationList)
+            }
+            .accentColor(.white)
         }
-        .padding(.horizontal)
     }
 }
 
