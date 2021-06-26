@@ -2,6 +2,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## Database is too large for git
+swissmedic.db
+
 ## User settings
 xcuserdata/
 
