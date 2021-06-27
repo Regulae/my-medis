@@ -44,7 +44,7 @@ struct ContentView: View {
                 MedicationOverview()
                     .tabItem { Label("Featured", systemImage: "calendar" )}
                     .tag(Tab.medicationOverview)
-                SwissmedicMedicationsView()
+                SwissmedicMedicationsView(searchText: "")
                     .tabItem { Label("List", systemImage: "list.bullet") }
                     .tag(Tab.medicationList)
             }
