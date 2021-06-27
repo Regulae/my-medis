@@ -8,28 +8,19 @@
 import SwiftUI
 
 struct MedicationOverview: View {
+    @EnvironmentObject var modelData: ModelData
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Today")
                 .font(.title)
                 .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text("Morning")
-                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text("Lunch")
-                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text("Evening")
-                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text("Night")
-                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            ForEach(modelData.medications.keys.sorted(), id: \.self){ key in
+                Text(key)
+                    .font(.title3)
+                    .bold()
+                MedicationRow(items: modelData.medications[key] ?? [])
+            }
             Spacer()
         }
         .padding(.horizontal)
@@ -39,5 +30,6 @@ struct MedicationOverview: View {
 struct MedicationOverview_Previews: PreviewProvider {
     static var previews: some View {
         MedicationOverview()
+            .environmentObject(ModelData())
     }
 }

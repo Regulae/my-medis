@@ -17,6 +17,9 @@
 		33994FAD268765C60022E3B4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAC268765C60022E3B4 /* ModelData.swift */; };
 		33994FAF268768700022E3B4 /* SwissmedicMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAE268768700022E3B4 /* SwissmedicMedicationsView.swift */; };
 		33994FB426877C690022E3B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB326877C680022E3B4 /* SearchBar.swift */; };
+		33994FB8268881ED0022E3B4 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB7268881ED0022E3B4 /* Medication.swift */; };
+		33994FBA2688B12C0022E3B4 /* testMedis.json in Resources */ = {isa = PBXBuildFile; fileRef = 33994FB92688B12C0022E3B4 /* testMedis.json */; };
+		33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FBB2688B58A0022E3B4 /* MedicationRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		33994FAC268765C60022E3B4 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		33994FAE268768700022E3B4 /* SwissmedicMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissmedicMedicationsView.swift; sourceTree = "<group>"; };
 		33994FB326877C680022E3B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		33994FB7268881ED0022E3B4 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		33994FB92688B12C0022E3B4 /* testMedis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testMedis.json; sourceTree = "<group>"; };
+		33994FBB2688B58A0022E3B4 /* MedicationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		33994FA626875B0B0022E3B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				33994FB92688B12C0022E3B4 /* testMedis.json */,
 				33994FA7268765110022E3B4 /* swissmedicMedications.json */,
 			);
 			path = Resources;
@@ -107,6 +114,7 @@
 			children = (
 				33994FAA268765510022E3B4 /* SwissmedicMedication.swift */,
 				33994FAC268765C60022E3B4 /* ModelData.swift */,
+				33994FB7268881ED0022E3B4 /* Medication.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				33994FB326877C680022E3B4 /* SearchBar.swift */,
+				33994FBB2688B58A0022E3B4 /* MedicationRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33994FBA2688B12C0022E3B4 /* testMedis.json in Resources */,
 				33910D3C267F38FE000CBC98 /* Preview Assets.xcassets in Resources */,
 				33994FA8268765110022E3B4 /* swissmedicMedications.json in Resources */,
 				33910D39267F38FE000CBC98 /* Assets.xcassets in Resources */,
@@ -189,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33994FB8268881ED0022E3B4 /* Medication.swift in Sources */,
 				33994FB426877C690022E3B4 /* SearchBar.swift in Sources */,
 				33910D37267F38F9000CBC98 /* ContentView.swift in Sources */,
 				33994FAB268765510022E3B4 /* SwissmedicMedication.swift in Sources */,
@@ -196,6 +207,7 @@
 				33994FAD268765C60022E3B4 /* ModelData.swift in Sources */,
 				33910D45267F3CDC000CBC98 /* MedicationOverview.swift in Sources */,
 				33910D35267F38F9000CBC98 /* MyMedisApp.swift in Sources */,
+				33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

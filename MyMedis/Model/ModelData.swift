@@ -9,6 +9,13 @@ import Foundation
 
 final class ModelData: ObservableObject{
     var swissmedicMedications: [SwissmedicMedication] = load("swissmedicMedications.json")
+    var testMedis: [Medication] = load("testMedis.json")
+    
+    var medications: [String: [Medication]]{
+        Dictionary(
+            grouping: testMedis, by: {$0.daytime.rawValue})
+    }
+    
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
