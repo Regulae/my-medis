@@ -11,5 +11,18 @@
     "frequency": null,
     "daytime": "Morning",
     "lastTaken": null
-  }
+  },  {
+      "id": 2,
+      "name": "Andreafol",
+      "substances": "Folsäure",
+      "authHolder": null,
+      "quantity": 1,
+      "unit": "Pill",
+      "repeating": "Daily",
+      "every": null,
+      "frequency": null,
+      "daytime": "Morning",
+      "lastTaken": null
+    }
+
 ]

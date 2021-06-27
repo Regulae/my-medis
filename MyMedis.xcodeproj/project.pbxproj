@@ -20,7 +20,44 @@
 		33994FB8268881ED0022E3B4 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB7268881ED0022E3B4 /* Medication.swift */; };
 		33994FBA2688B12C0022E3B4 /* testMedis.json in Resources */ = {isa = PBXBuildFile; fileRef = 33994FB92688B12C0022E3B4 /* testMedis.json */; };
 		33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FBB2688B58A0022E3B4 /* MedicationRow.swift */; };
+		33994FC42688C4050022E3B4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33994FC32688C4050022E3B4 /* WidgetKit.framework */; };
+		33994FC62688C4050022E3B4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33994FC52688C4050022E3B4 /* SwiftUI.framework */; };
+		33994FC92688C4050022E3B4 /* MyMedisWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FC82688C4050022E3B4 /* MyMedisWidget.swift */; };
+		33994FCC2688C4080022E3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33994FCB2688C4080022E3B4 /* Assets.xcassets */; };
+		33994FCE2688C4080022E3B4 /* MyMedisWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 33994FCA2688C4050022E3B4 /* MyMedisWidget.intentdefinition */; };
+		33994FCF2688C4080022E3B4 /* MyMedisWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 33994FCA2688C4050022E3B4 /* MyMedisWidget.intentdefinition */; };
+		33994FD22688C4080022E3B4 /* MyMedisWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 33994FC12688C4050022E3B4 /* MyMedisWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		33994FD72688C5480022E3B4 /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D44267F3CDC000CBC98 /* MedicationOverview.swift */; };
+		33994FDA2688C6020022E3B4 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FD82688C56F0022E3B4 /* WidgetView.swift */; };
+		33994FDB2688C62C0022E3B4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAC268765C60022E3B4 /* ModelData.swift */; };
+		33994FDC2688C6E40022E3B4 /* SwissmedicMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAA268765510022E3B4 /* SwissmedicMedication.swift */; };
+		33994FDD2688C6E70022E3B4 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB7268881ED0022E3B4 /* Medication.swift */; };
+		33994FDE2688C7080022E3B4 /* MedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FBB2688B58A0022E3B4 /* MedicationRow.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33994FD02688C4080022E3B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33910D29267F38F9000CBC98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33994FC02688C4050022E3B4;
+			remoteInfo = MyMedisWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33994FD62688C4080022E3B4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				33994FD22688C4080022E3B4 /* MyMedisWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33910D31267F38F9000CBC98 /* MyMedis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMedis.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +75,14 @@
 		33994FB7268881ED0022E3B4 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		33994FB92688B12C0022E3B4 /* testMedis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testMedis.json; sourceTree = "<group>"; };
 		33994FBB2688B58A0022E3B4 /* MedicationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRow.swift; sourceTree = "<group>"; };
+		33994FC12688C4050022E3B4 /* MyMedisWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyMedisWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		33994FC32688C4050022E3B4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		33994FC52688C4050022E3B4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		33994FC82688C4050022E3B4 /* MyMedisWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedisWidget.swift; sourceTree = "<group>"; };
+		33994FCA2688C4050022E3B4 /* MyMedisWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MyMedisWidget.intentdefinition; sourceTree = "<group>"; };
+		33994FCB2688C4080022E3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33994FCD2688C4080022E3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33994FD82688C56F0022E3B4 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +93,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33994FBE2688C4050022E3B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33994FC62688C4050022E3B4 /* SwiftUI.framework in Frameworks */,
+				33994FC42688C4050022E3B4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				33910D33267F38F9000CBC98 /* MyMedis */,
+				33994FC72688C4050022E3B4 /* MyMedisWidget */,
+				33994FC22688C4050022E3B4 /* Frameworks */,
 				33910D32267F38F9000CBC98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				33910D31267F38F9000CBC98 /* MyMedis.app */,
+				33994FC12688C4050022E3B4 /* MyMedisWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +185,27 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		33994FC22688C4050022E3B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33994FC32688C4050022E3B4 /* WidgetKit.framework */,
+				33994FC52688C4050022E3B4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33994FC72688C4050022E3B4 /* MyMedisWidget */ = {
+			isa = PBXGroup;
+			children = (
+				33994FC82688C4050022E3B4 /* MyMedisWidget.swift */,
+				33994FCA2688C4050022E3B4 /* MyMedisWidget.intentdefinition */,
+				33994FCB2688C4080022E3B4 /* Assets.xcassets */,
+				33994FCD2688C4080022E3B4 /* Info.plist */,
+				33994FD82688C56F0022E3B4 /* WidgetView.swift */,
+			);
+			path = MyMedisWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,15 +216,34 @@
 				33910D2D267F38F9000CBC98 /* Sources */,
 				33910D2E267F38F9000CBC98 /* Frameworks */,
 				33910D2F267F38F9000CBC98 /* Resources */,
+				33994FD62688C4080022E3B4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				33994FD12688C4080022E3B4 /* PBXTargetDependency */,
 			);
 			name = MyMedis;
 			productName = MyMedis;
 			productReference = 33910D31267F38F9000CBC98 /* MyMedis.app */;
 			productType = "com.apple.product-type.application";
+		};
+		33994FC02688C4050022E3B4 /* MyMedisWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33994FD32688C4080022E3B4 /* Build configuration list for PBXNativeTarget "MyMedisWidgetExtension" */;
+			buildPhases = (
+				33994FBD2688C4050022E3B4 /* Sources */,
+				33994FBE2688C4050022E3B4 /* Frameworks */,
+				33994FBF2688C4050022E3B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyMedisWidgetExtension;
+			productName = MyMedisWidgetExtension;
+			productReference = 33994FC12688C4050022E3B4 /* MyMedisWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -159,6 +256,9 @@
 				TargetAttributes = {
 					33910D30267F38F9000CBC98 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					33994FC02688C4050022E3B4 = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
@@ -176,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				33910D30267F38F9000CBC98 /* MyMedis */,
+				33994FC02688C4050022E3B4 /* MyMedisWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +293,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33994FBF2688C4050022E3B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33994FCC2688C4080022E3B4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,6 +311,7 @@
 				33994FB8268881ED0022E3B4 /* Medication.swift in Sources */,
 				33994FB426877C690022E3B4 /* SearchBar.swift in Sources */,
 				33910D37267F38F9000CBC98 /* ContentView.swift in Sources */,
+				33994FCF2688C4080022E3B4 /* MyMedisWidget.intentdefinition in Sources */,
 				33994FAB268765510022E3B4 /* SwissmedicMedication.swift in Sources */,
 				33994FAF268768700022E3B4 /* SwissmedicMedicationsView.swift in Sources */,
 				33994FAD268765C60022E3B4 /* ModelData.swift in Sources */,
@@ -211,7 +321,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33994FBD2688C4050022E3B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33994FC92688C4050022E3B4 /* MyMedisWidget.swift in Sources */,
+				33994FDD2688C6E70022E3B4 /* Medication.swift in Sources */,
+				33994FDC2688C6E40022E3B4 /* SwissmedicMedication.swift in Sources */,
+				33994FDE2688C7080022E3B4 /* MedicationRow.swift in Sources */,
+				33994FD72688C5480022E3B4 /* MedicationOverview.swift in Sources */,
+				33994FDB2688C62C0022E3B4 /* ModelData.swift in Sources */,
+				33994FDA2688C6020022E3B4 /* WidgetView.swift in Sources */,
+				33994FCE2688C4080022E3B4 /* MyMedisWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33994FD12688C4080022E3B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33994FC02688C4050022E3B4 /* MyMedisWidgetExtension */;
+			targetProxy = 33994FD02688C4080022E3B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		33910D3E267F38FE000CBC98 /* Debug */ = {
@@ -333,6 +466,7 @@
 		33910D41267F38FE000CBC98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +489,7 @@
 		33910D42267F38FE000CBC98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -369,6 +504,48 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heisch.regula.MyMedis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33994FD42688C4080022E3B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKQU55B7T8;
+				INFOPLIST_FILE = MyMedisWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heisch.regula.MyMedis.MyMedisWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33994FD52688C4080022E3B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKQU55B7T8;
+				INFOPLIST_FILE = MyMedisWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heisch.regula.MyMedis.MyMedisWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,6 +568,15 @@
 			buildConfigurations = (
 				33910D41267F38FE000CBC98 /* Debug */,
 				33910D42267F38FE000CBC98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33994FD32688C4080022E3B4 /* Build configuration list for PBXNativeTarget "MyMedisWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33994FD42688C4080022E3B4 /* Debug */,
+				33994FD52688C4080022E3B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
