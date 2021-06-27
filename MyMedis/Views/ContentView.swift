@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             HStack(alignment: .center){
-                Image("mymedis_heart_no_text")
+                Image("logo_bg_transparent")
                     .resizable()
                     .frame(width: 80)
                     .aspectRatio(1/1, contentMode: .fit)
@@ -39,6 +39,7 @@ struct ContentView: View {
                         .foregroundColor(Color("red"))
                 }
             }
+            .padding(.horizontal)
             .frame(maxWidth: .infinity)
             TabView(selection: $selection){
                 MedicationOverview()

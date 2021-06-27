@@ -30,7 +30,9 @@ struct MedicationOverview: View {
                 .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
                 .fontWeight(.medium)
                 .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
         }
+        .padding(.horizontal)
     }
 }
 

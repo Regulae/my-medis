@@ -25,12 +25,8 @@ struct SwissmedicMedicationsView: View {
             List(filteredMedications.filter({searchText.isEmpty ? true : ($0.name.contains(searchText) || $0.substances!.contains(searchText))})){ item in
                 Text(item.name)
             }
-//            List{
-//                ForEach(filteredMedications){ medication in
-//                    Text(medication.name)
-//                }
-//            }
         }
+        .padding(.horizontal)
     }
 }
 
