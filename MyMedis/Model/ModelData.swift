@@ -9,9 +9,9 @@ import Foundation
 
 final class ModelData: ObservableObject{
     var swissmedicMedications: [SwissmedicMedication] = load("swissmedicMedications.json")
-    var testMedis: [Medication] = load("testMedis.json")
+    var testMedis: [JsonMedication] = load("testMedis.json")
     
-    var medications: [String: [Medication]]{
+    var medications: [String: [JsonMedication]]{
         Dictionary(
             grouping: testMedis, by: {$0.daytime.rawValue})
     }

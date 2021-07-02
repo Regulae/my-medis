@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @State private var selection: Tab = .medicationOverview
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Medication.timeStamp, ascending: true)], animation: .default) private var medications : FetchedResults<Medication>
     
     enum Tab{
         case medicationOverview
@@ -31,7 +35,7 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                Button(action: addMedication){
                     Image(systemName: "plus")
                         .resizable()
                         .frame(width: 30, height: 30)
@@ -42,7 +46,7 @@ struct ContentView: View {
             .padding(.horizontal)
             .frame(maxWidth: .infinity)
             TabView(selection: $selection){
-                MedicationOverview()
+                MedicationOverview(medications: medications, viewContext: viewContext)
                     .tabItem { Label("Featured", systemImage: "calendar" )}
                     .tag(Tab.medicationOverview)
                 SwissmedicMedicationsView(searchText: "")
@@ -50,6 +54,24 @@ struct ContentView: View {
                     .tag(Tab.medicationList)
             }
             .accentColor(.white)
+        }
+    }
+    
+    private func addMedication() {
+        withAnimation {
+            let newItem = Medication(context: viewContext)
+            newItem.name = ""
+            newItem.substances=""
+            newItem.timeStamp = Date()
+
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
         }
     }
 }

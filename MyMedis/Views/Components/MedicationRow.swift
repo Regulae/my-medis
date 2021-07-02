@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MedicationRow: View {
-    var items:  [Medication] = []
+    var items:  [JsonMedication] = []
     let now = Date()
     
     var body: some View {
