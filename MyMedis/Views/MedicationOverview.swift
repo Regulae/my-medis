@@ -20,7 +20,7 @@ struct MedicationOverview: View {
                 .bold()
             List{
                 ForEach(medications) { medication in
-                    Text("Medication \(medication.timeStamp!, formatter: timeFormatter)")
+                    Text("Medication \(medication.name!): \(medication.substances!)")
                 }
                 .onDelete(perform: deleteMedications)
             }
