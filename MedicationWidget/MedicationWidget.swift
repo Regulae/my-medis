@@ -7,6 +7,45 @@
 
 import WidgetKit
 import SwiftUI
+import CoreData
+
+//public extension URL{
+//    static func storeURL(for appGroup: String, databaseName: String) -> URL {
+//        guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {
+//            fatalError("Shared file container could not be created.")
+//        }
+//        
+//        return fileContainer.appendingPathComponent("\(databaseName).sqlite")
+//    }
+//}
+//
+//var managedObjectContext: NSManagedObjectContext {
+//    return persistentContainer.viewContext
+//}
+//
+//var workingContext: NSManagedObjectContext {
+//    let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+//    context.parent = managedObjectContext
+//    return context
+//}
+//
+//var persistentContainer: NSPersistentCloudKitContainer = {
+//    let container = NSPersistentCloudKitContainer(name: "MyMedis")
+//    
+//    let storeURL = URL.storeURL(for: "group.com.heisch.regula.coredata", databaseName: "MyMedis")
+//    let description = NSPersistentStoreDescription(url: storeURL)
+//    
+//    container.loadPersistentStores(completionHandler: {storeDescription, error in
+//        if let error = error as NSError? {
+//            print(error)
+//        }
+//    })
+//    
+//    container.viewContext.automaticallyMergesChangesFromParent = true
+//    container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+//    
+//    return container
+//}()
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -40,19 +79,23 @@ struct SimpleEntry: TimelineEntry {
 
 struct MedicationWidgetEntryView : View {
     var entry: Provider.Entry
+    let persistenceController = PersistenceController.shared
 
     var body: some View {
-        Text("Test")
+        WidgetView()
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 }
 
 @main
 struct MedicationWidget: Widget {
     let kind: String = "MedicationWidget"
+    let persistenceController = PersistenceController.shared
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MedicationWidgetEntryView(entry: entry)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")

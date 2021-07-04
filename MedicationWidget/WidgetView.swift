@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct WidgetView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Medication.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Medication.timeStamp, ascending: true)], animation: .default) private var medications : FetchedResults<Medication>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            List{
+                ForEach(medications) { medication in
+                    Text("Medication \(medication.name!): \(medication.substances!)")
+                }
+            }
+            Text("Test")
+        }
     }
 }
 

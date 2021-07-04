@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338A84FF2691F7AC0097C189 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338A84FE2691F7AC0097C189 /* WidgetView.swift */; };
 		33910D35267F38F9000CBC98 /* MyMedisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D34267F38F9000CBC98 /* MyMedisApp.swift */; };
 		33910D37267F38F9000CBC98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D36267F38F9000CBC98 /* ContentView.swift */; };
 		33910D39267F38FE000CBC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33910D38267F38FE000CBC98 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		338A84FE2691F7AC0097C189 /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		33910D31267F38F9000CBC98 /* MyMedis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMedis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33910D34267F38F9000CBC98 /* MyMedisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedisApp.swift; sourceTree = "<group>"; };
 		33910D36267F38F9000CBC98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				33994FE72688CB410022E3B4 /* MedicationWidget.swift */,
 				33994FE92688CB430022E3B4 /* Assets.xcassets */,
 				33994FEB2688CB430022E3B4 /* Info.plist */,
+				338A84FE2691F7AC0097C189 /* WidgetView.swift */,
 			);
 			path = MedicationWidget;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				33995034268F49230022E3B4 /* AddMedicationView.swift in Sources */,
 				33994FF62688CB600022E3B4 /* MedicationOverview.swift in Sources */,
 				33994FF42688CB590022E3B4 /* ModelData.swift in Sources */,
+				338A84FF2691F7AC0097C189 /* WidgetView.swift in Sources */,
 				33994FF52688CB5C0022E3B4 /* MedicationRow.swift in Sources */,
 				33994FFC2688E5200022E3B4 /* MyMedis.xcdatamodeld in Sources */,
 				33995030268F42960022E3B4 /* Medication+CoreDataProperties.swift in Sources */,
