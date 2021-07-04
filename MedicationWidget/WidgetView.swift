@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct WidgetView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(entity: Medication.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Medication.timeStamp, ascending: true)], animation: .default) private var medications : FetchedResults<Medication>
     
     var body: some View {
