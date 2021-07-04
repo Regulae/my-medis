@@ -20,6 +20,7 @@ extension Medication {
     @NSManaged public var name: String?
     @NSManaged public var timeStamp: Date?
     @NSManaged public var substances: String?
+    @NSManaged public var daytime: String?
 
 }
 

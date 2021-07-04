@@ -11,23 +11,24 @@ import CoreData
 struct AddMedicationView: View {
     @State var medicationName: String = ""
     @State var substances: String = ""
-    @State var daytime: Daytime = .morning
+    @State var daytime: String = "Morning"
     
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         NavigationView{
             VStack{
-            Form{
-                TextField("Medication Name", text: $medicationName)
-                TextField("Substances", text: $substances)
-//                Picker("Day Time", selection: $daytime){
-//                    ForEach(Daytime.allCases, id: \.id){ value in
-//                        Text(value.rawValue).tag(value)
-//                    }
-//                }
-
-            }
+                Form{
+                    TextField("Medication Name", text: $medicationName)
+                    TextField("Substances", text: $substances)
+                    Picker("Day Time", selection: $daytime){
+                        Text("Morning").tag("Morning")
+                        Text("Lunch").tag("Lunch")
+                        Text("Evening").tag("Evening")
+                        Text("Night").tag("Night")
+                    }
+                    
+                }
                 HStack(alignment: .center){
                     Button(action: {}){
                         Text("Cancel")
@@ -60,8 +61,8 @@ struct AddMedicationView: View {
             newItem.name = medicationName
             newItem.substances = substances
             newItem.timeStamp = Date()
-//            newItem.dayTimeEnum = daytime
-
+            newItem.daytime = daytime
+            
             do {
                 try viewContext.save()
             } catch {
