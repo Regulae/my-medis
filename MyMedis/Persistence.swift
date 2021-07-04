@@ -20,6 +20,7 @@ struct PersistenceController {
             newItem.timeStamp = Date()
             newItem.takeNext = Date()
             newItem.daytime = "Morning"
+            newItem.taken = false
         }
         do {
             try viewContext.save()

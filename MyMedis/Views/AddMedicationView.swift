@@ -8,12 +8,23 @@
 import SwiftUI
 import CoreData
 
+extension Date {
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayAfter: Date {
+            return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+        }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+}
+
 struct AddMedicationView: View {
     @State var medicationName: String = ""
     @State var substances: String = ""
     @State var daytime: String = "Morning"
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         NavigationView{
@@ -30,7 +41,7 @@ struct AddMedicationView: View {
                     
                 }
                 HStack(alignment: .center){
-                    Button(action: {}){
+                    Button(action: {self.presentationMode.wrappedValue.dismiss()}){
                         Text("Cancel")
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 50)
@@ -53,18 +64,22 @@ struct AddMedicationView: View {
             }
             .navigationBarTitle("Add Medication")
         }
+        .accentColor(Color("red"))
     }
     
     private func addMedication() {
         withAnimation {
+            let now = Date()
             let newItem = Medication(context: viewContext)
             newItem.name = medicationName
             newItem.substances = substances
-            newItem.timeStamp = Date()
+            newItem.timeStamp = now
             newItem.daytime = daytime
-            
+            newItem.takeNext = Date.tomorrow
+            newItem.taken = false
             do {
                 try viewContext.save()
+                self.presentationMode.wrappedValue.dismiss()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.

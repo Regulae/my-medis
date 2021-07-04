@@ -65,6 +65,7 @@ struct ContentView: View {
             )
             
         }
+        .accentColor(Color("red"))
         .padding(.top, 0.0)
         
     }

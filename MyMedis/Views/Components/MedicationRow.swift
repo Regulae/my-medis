@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct MedicationRow: View {
-    var items:  [JsonMedication] = []
     let now = Date()
+    let medication: Medication
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
-        List(items){ item in
             HStack{
-                Text(item.name)
+                Text(medication.name!)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                if((now.timeIntervalSince(item.lastTaken ?? Date()) > 86400)){
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                if(!medication.taken){
+                    Button(action: setMedicationTaken){
                         Image(systemName: "circle")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .aspectRatio(1/1, contentMode: .fit)
                             .foregroundColor(.black)
                     }
-                } else {
+                } else if (medication.taken) {
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
                         Image(systemName: "checkmark.circle")
                             .resizable()
@@ -35,16 +35,34 @@ struct MedicationRow: View {
                 }
                 
             }
+            .onAppear(perform: checkLastTaken)
         }
-        }
-}
-
-struct MedicationRow_Previews: PreviewProvider {
-    static var medications = ModelData().testMedis
     
-    static var previews: some View {
-        MedicationRow(
-            items: Array(medications.prefix(4))
-        )
+    private func checkLastTaken() {
+        if medication.lastTaken ?? Date() < now {
+            medication.taken = false
+        }
+    }
+    
+    private func setMedicationTaken() {
+        withAnimation {
+            medication.taken = true
+            medication.lastTaken = now
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
+
+//struct MedicationRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MedicationRow( medication: Medication()
+//        )
+//    }
+//}

@@ -20,7 +20,7 @@ struct MedicationOverview: View {
                 .bold()
             List{
                 ForEach(medications) { medication in
-                    Text("Medication \(medication.name!): \(medication.substances!)")
+                    MedicationRow(medication: medication)
                 }
                 .onDelete(perform: deleteMedications)
             }
