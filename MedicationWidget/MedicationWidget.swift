@@ -37,7 +37,7 @@ struct MedicationWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        return List{
+        VStack{
             ForEach(meds) { medication in
                 Text("Medication \(medication.name!): \(medication.substances!)")
             }
