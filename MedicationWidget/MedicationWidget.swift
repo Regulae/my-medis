@@ -42,23 +42,23 @@ struct SimpleEntry: TimelineEntry {
 
 struct MedicationWidgetEntryView : View {
     var entry: Provider.Entry
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
 
     var body: some View {
         WidgetView()
-            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
 }
 
 @main
 struct MedicationWidget: Widget {
     let kind: String = "MedicationWidget"
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MedicationWidgetEntryView(entry: entry)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
