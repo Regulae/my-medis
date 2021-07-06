@@ -14,24 +14,17 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let midnight = Calendar.current.startOfDay(for: Date())
+        let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
+        let entries = [SimpleEntry(date: midnight)]
+        let timeline = Timeline(entries: entries, policy: .after(nextMidnight))
         completion(timeline)
     }
 }
@@ -42,26 +35,39 @@ struct SimpleEntry: TimelineEntry {
 
 struct MedicationWidgetEntryView : View {
     var entry: Provider.Entry
-//    let persistenceController = PersistenceController.shared
-
+    
     var body: some View {
-        WidgetView()
-//            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        return List{
+            ForEach(meds) { medication in
+                Text("Medication \(medication.name!): \(medication.substances!)")
+            }
+        }
+    }
+    
+    var meds: [Medication] {
+        let request = NSFetchRequest<Medication>(entityName: "Medication")
+        do {
+            return try CoreDataStack.shared.managedObjectContext.fetch(request)
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
     }
 }
 
 @main
 struct MedicationWidget: Widget {
     let kind: String = "MedicationWidget"
-//    let persistenceController = PersistenceController.shared
-
+    //    let persistenceController = PersistenceController.shared
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MedicationWidgetEntryView(entry: entry)
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
