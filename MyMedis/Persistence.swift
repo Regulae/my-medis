@@ -35,11 +35,16 @@ struct PersistenceController {
 
     let container: NSPersistentContainer
 
+
     init(inMemory: Bool = false) {
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.heisch.regula.coredata")!
+        let storeURL = containerURL.appendingPathComponent("MyMedis.sqlite")
+        let description = NSPersistentStoreDescription(url: storeURL)
         container = NSPersistentContainer(name: "MyMedis")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        container.persistentStoreDescriptions = [description]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
