@@ -37,37 +37,21 @@ struct MedicationWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        VStack{
-            ForEach(meds) { medication in
-                Text("Medication \(medication.name!): \(medication.substances!)")
-            }
-        }
-    }
-    
-    var meds: [Medication] {
-        let request = NSFetchRequest<Medication>(entityName: "Medication")
-        do {
-            return try CoreDataStack.shared.managedObjectContext.fetch(request)
-        } catch {
-            print(error.localizedDescription)
-            return []
-        }
+        WidgetView()
     }
 }
 
 @main
 struct MedicationWidget: Widget {
     let kind: String = "MedicationWidget"
-    //    let persistenceController = PersistenceController.shared
-    
+
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             MedicationWidgetEntryView(entry: entry)
-            //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
