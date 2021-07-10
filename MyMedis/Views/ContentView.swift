@@ -32,9 +32,9 @@ struct ContentView: View {
                     MedicationOverview(medications: medications, viewContext: viewContext)
                         .tabItem { Label("Featured", systemImage: "calendar" )}
                         .tag(Tab.medicationOverview)
-                    SwissmedicMedicationsView(searchText: "")
-                        .tabItem { Label("List", systemImage: "list.bullet") }
-                        .tag(Tab.medicationList)
+//                    SwissmedicMedicationsView(searchText: "", medicationName: )
+//                        .tabItem { Label("List", systemImage: "list.bullet") }
+//                        .tag(Tab.medicationList)
                 }
                 .accentColor(.white)
             }

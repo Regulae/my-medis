@@ -36,9 +36,9 @@
 		33995022268F14CC0022E3B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995021268F14CC0022E3B4 /* Persistence.swift */; };
 		3399502F268F42920022E3B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995021268F14CC0022E3B4 /* Persistence.swift */; };
 		33995033268F49230022E3B4 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995032268F49230022E3B4 /* AddMedicationView.swift */; };
-		33995034268F49230022E3B4 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995032268F49230022E3B4 /* AddMedicationView.swift */; };
 		33BEBDED26944977009F6EDF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBDEC26944977009F6EDF /* CoreDataStack.swift */; };
 		33BEBDEE26944977009F6EDF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBDEC26944977009F6EDF /* CoreDataStack.swift */; };
+		C848551B2E58ABE1C1E59B78 /* Multiselector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84859C1EBD6312713AF5687 /* Multiselector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,7 @@
 		33995021268F14CC0022E3B4 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		33995032268F49230022E3B4 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 		33BEBDEC26944977009F6EDF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C84859C1EBD6312713AF5687 /* Multiselector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multiselector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +195,7 @@
 			children = (
 				33994FB326877C680022E3B4 /* SearchBar.swift */,
 				33994FBB2688B58A0022E3B4 /* MedicationRow.swift */,
+				C84859C1EBD6312713AF5687 /* Multiselector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,6 +335,7 @@
 				33995033268F49230022E3B4 /* AddMedicationView.swift in Sources */,
 				33910D35267F38F9000CBC98 /* MyMedisApp.swift in Sources */,
 				33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */,
+				C848551B2E58ABE1C1E59B78 /* Multiselector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +345,6 @@
 			files = (
 				33994FE82688CB410022E3B4 /* MedicationWidget.swift in Sources */,
 				3399502F268F42920022E3B4 /* Persistence.swift in Sources */,
-				33995034268F49230022E3B4 /* AddMedicationView.swift in Sources */,
 				33994FF62688CB600022E3B4 /* MedicationOverview.swift in Sources */,
 				33994FF42688CB590022E3B4 /* ModelData.swift in Sources */,
 				33BEBDEE26944977009F6EDF /* CoreDataStack.swift in Sources */,
