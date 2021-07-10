@@ -75,10 +75,3 @@ struct MedicationRow: View {
         }
     }
 }
-
-//struct MedicationRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MedicationRow( medication: Medication()
-//        )
-//    }
-//}

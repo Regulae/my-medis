@@ -32,10 +32,3 @@ struct SwissmedicMedicationsView: View {
                 .padding(.horizontal)
     }
 }
-
-//struct SwissmedicMedicationsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SwissmedicMedicationsView(searchText: "Ibuprofen")
-//                .environmentObject(ModelData())
-//    }
-//}

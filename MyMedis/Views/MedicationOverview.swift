@@ -110,10 +110,3 @@ private let timeFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
-
-//struct MedicationOverview_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//
-//    }
-//}

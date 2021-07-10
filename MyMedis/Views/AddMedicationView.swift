@@ -106,9 +106,3 @@ struct AddMedicationView: View {
         }
     }
 }
-
-struct AddMedicationView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddMedicationView()
-    }
-}
