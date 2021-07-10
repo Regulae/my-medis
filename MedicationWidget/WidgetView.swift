@@ -15,11 +15,13 @@ struct WidgetView: View {
         VStack {
             Text("Today")
                     .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             ForEach(meds) { medication in
                 Text("\(medication.name!)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .frame(maxWidth: .infinity,alignment: .leading)
+        .padding()
     }
 
     var meds: [Medication] {

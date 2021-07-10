@@ -41,8 +41,6 @@ struct MedicationRow: View {
     
     private func checkLastTaken() {
         let daysFromTaken = userCalendar.dateComponents([.day], from: medication.lastTaken ?? Date(), to: now)
-        print(daysFromTaken.day!)
-        print(medication.lastTaken)
         if daysFromTaken.day! > 1 {
             medication.taken = false
         }
@@ -52,7 +50,6 @@ struct MedicationRow: View {
         withAnimation {
             medication.taken = true
             medication.lastTaken = now
-            print(medication.lastTaken)
             do {
                 try viewContext.save()
             } catch {
