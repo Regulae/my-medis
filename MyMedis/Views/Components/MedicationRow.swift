@@ -12,44 +12,58 @@ struct MedicationRow: View {
     let now = Date()
     let medication: Medication
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     var body: some View {
-            HStack{
-                Text(medication.name!)
+        HStack {
+            Text(medication.name!)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                if(!medication.taken){
-                    Button(action: setMedicationTaken){
-                        Image(systemName: "circle")
+            if (!medication.taken) {
+                Button(action: setMedicationTaken) {
+                    Image(systemName: "circle")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .aspectRatio(1/1, contentMode: .fit)
+                            .aspectRatio(1 / 1, contentMode: .fit)
                             .foregroundColor(.black)
-                    }
-                } else if (medication.taken) {
-                    Button(action: checkLastTaken){
-                        Image(systemName: "checkmark.circle")
+                }
+            } else if (medication.taken) {
+                Button(action: unsetMedicationTaken) {
+                    Image(systemName: "checkmark.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .aspectRatio(1/1, contentMode: .fit)
+                            .aspectRatio(1 / 1, contentMode: .fit)
                             .foregroundColor(Color("green"))
-                    }
                 }
-                
             }
-            .onAppear(perform: checkLastTaken)
+
         }
-    
+                .onAppear(perform: checkLastTaken)
+    }
+
     private func checkLastTaken() {
         let daysFromTaken = userCalendar.dateComponents([.day], from: medication.lastTaken ?? Date(), to: now)
         if daysFromTaken.day! > 1 {
             medication.taken = false
         }
     }
-    
+
     private func setMedicationTaken() {
         withAnimation {
-            medication.taken = true
-            medication.lastTaken = now
+                medication.taken = true
+                medication.lastTaken = now
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    private func unsetMedicationTaken() {
+        withAnimation {
+                medication.taken = false
+                medication.lastTaken = medication.timeStamp
             do {
                 try viewContext.save()
             } catch {

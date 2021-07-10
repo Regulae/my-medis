@@ -12,26 +12,85 @@ struct MedicationOverview: View {
     @EnvironmentObject var modelData: ModelData
     var medications: FetchedResults<Medication>
     var viewContext: NSManagedObjectContext
-    
-    var body: some View {
-        VStack(alignment: .leading){
-            Text("Today")
-                .font(.title)
-                .bold()
-            List{
-                ForEach(medications) { medication in
-                    MedicationRow(medication: medication)
-                }
-                .onDelete(perform: deleteMedications)
-            }
-            Spacer()
+
+    var morningMedications: [Medication] {
+        medications.filter { medication in
+            medication.daytime == "Morning"
         }
-        .padding(.horizontal)
     }
-    
+    var lunchMedications: [Medication] {
+        medications.filter { medication in
+            medication.daytime == "Lunch"
+        }
+    }
+    var eveningMedications: [Medication] {
+        medications.filter { medication in
+            medication.daytime == "Evening"
+        }
+    }
+    var nightMedications: [Medication] {
+        medications.filter { medication in
+            medication.daytime == "Night"
+        }
+    }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("Today")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom)
+                if morningMedications.count >= 1 {
+                    Text("Morning")
+                            .font(.title2)
+                    ForEach(morningMedications) { medication in
+                        MedicationRow(medication: medication)
+                    }
+                            .onDelete(perform: deleteMedications)
+                    Divider()
+                }
+                if lunchMedications.count >= 1 {
+                    Text("Lunch")
+                            .font(.title2)
+
+                    ForEach(lunchMedications) { medication in
+                        MedicationRow(medication: medication)
+                    }
+                            .onDelete(perform: deleteMedications)
+                    Divider()
+                }
+                if eveningMedications.count >= 1 {
+                    Text("Evening")
+                            .font(.title2)
+                    ForEach(eveningMedications) { medication in
+                        MedicationRow(medication: medication)
+                    }
+                            .onDelete(perform: deleteMedications)
+                    Divider()
+
+                }
+                if nightMedications.count >= 1 {
+                    Text("Night")
+                            .font(.title2)
+                    ForEach(nightMedications) { medication in
+                        MedicationRow(medication: medication)
+                    }
+                            .onDelete(perform: deleteMedications)
+                    Divider()
+                }
+
+                Spacer()
+            }
+                    .padding(.horizontal)
+        }
+    }
+
     private func deleteMedications(offsets: IndexSet) {
         withAnimation {
-            offsets.map { medications[$0] }.forEach(viewContext.delete)
+            offsets.map {
+                medications[$0]
+            }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
