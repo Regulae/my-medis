@@ -14,6 +14,7 @@ struct SwissmedicMedicationsView: View {
     @Binding var showSearch: Bool
     @Binding var medicationName: String
     @Binding var medicationSubstances: String
+    @Binding var medicationAuthHolder: String
 
     var body: some View {
         VStack {
@@ -23,6 +24,7 @@ struct SwissmedicMedicationsView: View {
                 Button(action: {
                     self.medicationName = item.name
                     self.medicationSubstances = item.substances ?? ""
+                    self.medicationAuthHolder = item.authHolder ?? ""
                     self.showSearch = false
                 }) {
                     Text(item.name)

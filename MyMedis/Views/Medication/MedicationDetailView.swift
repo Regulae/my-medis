@@ -12,9 +12,16 @@ struct MedicationDetailView: View {
     var medication: Medication
 
     var body: some View {
-        NavigationView {
+        VStack {
             Text(medication.name ?? "")
                     .font(.largeTitle)
+            if medication.substances != "" {
+                Text("Substances: \(medication.substances ?? "")")
+            }
+            if medication.authHolder != nil {
+                Text("Authorization Holder: \(medication.authHolder ?? "")")
+            }
         }
+                .padding()
     }
 }

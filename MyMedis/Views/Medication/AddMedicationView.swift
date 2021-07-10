@@ -23,6 +23,7 @@ extension Date {
 struct AddMedicationView: View {
     @State var medicationName: String = ""
     @State var substances: String = ""
+    @State var authHolder: String = ""
     @State var daytime: String = "Morning"
     @State private var showingSearch = false
 
@@ -78,7 +79,7 @@ struct AddMedicationView: View {
             }
                     .navigationBarTitle("Add Medication")
                     .sheet(isPresented: $showingSearch) {
-                        SwissmedicMedicationsView(searchText: "", showSearch: $showingSearch, medicationName: $medicationName, medicationSubstances: $substances)
+                        SwissmedicMedicationsView(searchText: "", showSearch: $showingSearch, medicationName: $medicationName, medicationSubstances: $substances, medicationAuthHolder: $authHolder)
                     }
         }
                 .accentColor(Color("red"))
@@ -94,6 +95,7 @@ struct AddMedicationView: View {
             newItem.daytime = daytime
             newItem.takeNext = Date.tomorrow
             newItem.taken = false
+            newItem.authHolder = authHolder
             do {
                 try viewContext.save()
                 self.presentationMode.wrappedValue.dismiss()
