@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MedicationRow: View {
+    let userCalendar = Calendar.current
     let now = Date()
     let medication: Medication
     @Environment(\.managedObjectContext) private var viewContext
@@ -25,7 +26,7 @@ struct MedicationRow: View {
                             .foregroundColor(.black)
                     }
                 } else if (medication.taken) {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                    Button(action: checkLastTaken){
                         Image(systemName: "checkmark.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -39,7 +40,10 @@ struct MedicationRow: View {
         }
     
     private func checkLastTaken() {
-        if medication.lastTaken ?? Date() < now {
+        let daysFromTaken = userCalendar.dateComponents([.day], from: medication.lastTaken ?? Date(), to: now)
+        print(daysFromTaken.day!)
+        print(medication.lastTaken)
+        if daysFromTaken.day! > 1 {
             medication.taken = false
         }
     }
@@ -48,6 +52,7 @@ struct MedicationRow: View {
         withAnimation {
             medication.taken = true
             medication.lastTaken = now
+            print(medication.lastTaken)
             do {
                 try viewContext.save()
             } catch {

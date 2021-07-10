@@ -19,7 +19,7 @@ struct WidgetView: View {
                 Text("\(medication.name!)")
             }
         }
-        .frame(alignment: .leading)
+        .frame(maxWidth: .infinity,alignment: .leading)
     }
 
     var meds: [Medication] {
