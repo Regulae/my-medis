@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MedicationRow: View {
+    @State private var showDetail = false
+
     let userCalendar = Calendar.current
     let now = Date()
     let medication: Medication
@@ -15,8 +17,11 @@ struct MedicationRow: View {
 
     var body: some View {
         HStack {
-            Text(medication.name!)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            Button(action: { showDetail = true }) {
+                Text(medication.name!)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+            }
             if (!medication.taken) {
                 Button(action: setMedicationTaken) {
                     Image(systemName: "circle")
@@ -37,6 +42,9 @@ struct MedicationRow: View {
 
         }
                 .onAppear(perform: checkLastTaken)
+                .sheet(isPresented: $showDetail) {
+                    MedicationDetailView(medication: medication)
+                }
     }
 
     private func checkLastTaken() {
@@ -48,8 +56,8 @@ struct MedicationRow: View {
 
     private func setMedicationTaken() {
         withAnimation {
-                medication.taken = true
-                medication.lastTaken = now
+            medication.taken = true
+            medication.lastTaken = now
             do {
                 try viewContext.save()
             } catch {
@@ -60,10 +68,11 @@ struct MedicationRow: View {
             }
         }
     }
+
     private func unsetMedicationTaken() {
         withAnimation {
-                medication.taken = false
-                medication.lastTaken = medication.timeStamp
+            medication.taken = false
+            medication.lastTaken = medication.timeStamp
             do {
                 try viewContext.save()
             } catch {

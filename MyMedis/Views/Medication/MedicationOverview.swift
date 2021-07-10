@@ -10,6 +10,7 @@ import CoreData
 
 struct MedicationOverview: View {
     @EnvironmentObject var modelData: ModelData
+
     var medications: FetchedResults<Medication>
     var viewContext: NSManagedObjectContext
 

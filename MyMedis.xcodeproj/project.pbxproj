@@ -12,11 +12,9 @@
 		33910D37267F38F9000CBC98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D36267F38F9000CBC98 /* ContentView.swift */; };
 		33910D39267F38FE000CBC98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33910D38267F38FE000CBC98 /* Assets.xcassets */; };
 		33910D3C267F38FE000CBC98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33910D3B267F38FE000CBC98 /* Preview Assets.xcassets */; };
-		33910D45267F3CDC000CBC98 /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D44267F3CDC000CBC98 /* MedicationOverview.swift */; };
 		33994FA8268765110022E3B4 /* swissmedicMedications.json in Resources */ = {isa = PBXBuildFile; fileRef = 33994FA7268765110022E3B4 /* swissmedicMedications.json */; };
 		33994FAB268765510022E3B4 /* SwissmedicMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAA268765510022E3B4 /* SwissmedicMedication.swift */; };
 		33994FAD268765C60022E3B4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAC268765C60022E3B4 /* ModelData.swift */; };
-		33994FAF268768700022E3B4 /* SwissmedicMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAE268768700022E3B4 /* SwissmedicMedicationsView.swift */; };
 		33994FB426877C690022E3B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB326877C680022E3B4 /* SearchBar.swift */; };
 		33994FB8268881ED0022E3B4 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB7268881ED0022E3B4 /* Medication.swift */; };
 		33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FBB2688B58A0022E3B4 /* MedicationRow.swift */; };
@@ -28,15 +26,16 @@
 		33994FF22688CB4D0022E3B4 /* SwissmedicMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAA268765510022E3B4 /* SwissmedicMedication.swift */; };
 		33994FF32688CB530022E3B4 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FB7268881ED0022E3B4 /* Medication.swift */; };
 		33994FF42688CB590022E3B4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FAC268765C60022E3B4 /* ModelData.swift */; };
-		33994FF52688CB5C0022E3B4 /* MedicationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33994FBB2688B58A0022E3B4 /* MedicationRow.swift */; };
-		33994FF62688CB600022E3B4 /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D44267F3CDC000CBC98 /* MedicationOverview.swift */; };
 		33994FFB2688E51A0022E3B4 /* MyMedis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33994FF92688E51A0022E3B4 /* MyMedis.xcdatamodeld */; };
 		33994FFC2688E5200022E3B4 /* MyMedis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33994FF92688E51A0022E3B4 /* MyMedis.xcdatamodeld */; };
 		33995022268F14CC0022E3B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995021268F14CC0022E3B4 /* Persistence.swift */; };
 		3399502F268F42920022E3B4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995021268F14CC0022E3B4 /* Persistence.swift */; };
-		33995033268F49230022E3B4 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33995032268F49230022E3B4 /* AddMedicationView.swift */; };
 		33BEBDED26944977009F6EDF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBDEC26944977009F6EDF /* CoreDataStack.swift */; };
 		33BEBDEE26944977009F6EDF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEBDEC26944977009F6EDF /* CoreDataStack.swift */; };
+		C8485058AAA3B9322F191417 /* SwissmedicMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */; };
+		C8485394F458815BBD002EB9 /* MedicationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */; };
+		C8485593FD28AEAFC9E68E35 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */; };
+		C848568BB94985073666736F /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C848533700BD0DD85E54CE8F /* MedicationOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +70,9 @@
 		33910D38267F38FE000CBC98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33910D3B267F38FE000CBC98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		33910D3D267F38FE000CBC98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33910D44267F3CDC000CBC98 /* MedicationOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationOverview.swift; sourceTree = "<group>"; };
 		33994FA7268765110022E3B4 /* swissmedicMedications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swissmedicMedications.json; sourceTree = SOURCE_ROOT; };
 		33994FAA268765510022E3B4 /* SwissmedicMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissmedicMedication.swift; sourceTree = "<group>"; };
 		33994FAC268765C60022E3B4 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		33994FAE268768700022E3B4 /* SwissmedicMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwissmedicMedicationsView.swift; sourceTree = "<group>"; };
 		33994FB326877C680022E3B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		33994FB7268881ED0022E3B4 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		33994FBB2688B58A0022E3B4 /* MedicationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRow.swift; sourceTree = "<group>"; };
@@ -87,8 +84,11 @@
 		33994FEB2688CB430022E3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33994FFA2688E51A0022E3B4 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		33995021268F14CC0022E3B4 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		33995032268F49230022E3B4 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 		33BEBDEC26944977009F6EDF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C848533700BD0DD85E54CE8F /* MedicationOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationOverview.swift; sourceTree = "<group>"; };
+		C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailView.swift; sourceTree = "<group>"; };
+		C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwissmedicMedicationsView.swift; sourceTree = "<group>"; };
+		C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,9 +160,7 @@
 			children = (
 				33994FB226877C550022E3B4 /* Components */,
 				33910D36267F38F9000CBC98 /* ContentView.swift */,
-				33910D44267F3CDC000CBC98 /* MedicationOverview.swift */,
-				33994FAE268768700022E3B4 /* SwissmedicMedicationsView.swift */,
-				33995032268F49230022E3B4 /* AddMedicationView.swift */,
+				C8485919383BC85BBAF03E3D /* Medication */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +210,17 @@
 				338A84FE2691F7AC0097C189 /* WidgetView.swift */,
 			);
 			path = MedicationWidget;
+			sourceTree = "<group>";
+		};
+		C8485919383BC85BBAF03E3D /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */,
+				C848533700BD0DD85E54CE8F /* MedicationOverview.swift */,
+				C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */,
+				C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */,
+			);
+			path = Medication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,12 +331,13 @@
 				33910D37267F38F9000CBC98 /* ContentView.swift in Sources */,
 				33994FAB268765510022E3B4 /* SwissmedicMedication.swift in Sources */,
 				33994FFB2688E51A0022E3B4 /* MyMedis.xcdatamodeld in Sources */,
-				33994FAF268768700022E3B4 /* SwissmedicMedicationsView.swift in Sources */,
 				33994FAD268765C60022E3B4 /* ModelData.swift in Sources */,
-				33910D45267F3CDC000CBC98 /* MedicationOverview.swift in Sources */,
-				33995033268F49230022E3B4 /* AddMedicationView.swift in Sources */,
 				33910D35267F38F9000CBC98 /* MyMedisApp.swift in Sources */,
 				33994FBC2688B58B0022E3B4 /* MedicationRow.swift in Sources */,
+				C8485593FD28AEAFC9E68E35 /* AddMedicationView.swift in Sources */,
+				C848568BB94985073666736F /* MedicationOverview.swift in Sources */,
+				C8485058AAA3B9322F191417 /* SwissmedicMedicationsView.swift in Sources */,
+				C8485394F458815BBD002EB9 /* MedicationDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +347,9 @@
 			files = (
 				33994FE82688CB410022E3B4 /* MedicationWidget.swift in Sources */,
 				3399502F268F42920022E3B4 /* Persistence.swift in Sources */,
-				33994FF62688CB600022E3B4 /* MedicationOverview.swift in Sources */,
 				33994FF42688CB590022E3B4 /* ModelData.swift in Sources */,
 				33BEBDEE26944977009F6EDF /* CoreDataStack.swift in Sources */,
 				338A84FF2691F7AC0097C189 /* WidgetView.swift in Sources */,
-				33994FF52688CB5C0022E3B4 /* MedicationRow.swift in Sources */,
 				33994FFC2688E5200022E3B4 /* MyMedis.xcdatamodeld in Sources */,
 				33994FF32688CB530022E3B4 /* Medication.swift in Sources */,
 				33994FF22688CB4D0022E3B4 /* SwissmedicMedication.swift in Sources */,
