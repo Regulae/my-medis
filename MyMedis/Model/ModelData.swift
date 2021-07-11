@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 final class ModelData: ObservableObject{
     var swissmedicMedications: [SwissmedicMedication] = load("swissmedicMedications.json")
+
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

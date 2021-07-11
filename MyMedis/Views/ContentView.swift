@@ -16,7 +16,7 @@ struct ContentView: View {
     
     enum Tab{
         case medicationOverview
-        case medicationList
+        case user
     }
     
     init() {
@@ -32,9 +32,9 @@ struct ContentView: View {
                     MedicationOverview(medications: medications, viewContext: viewContext)
                         .tabItem { Label("Featured", systemImage: "calendar" )}
                         .tag(Tab.medicationOverview)
-//                    SwissmedicMedicationsView(searchText: "", medicationName: )
-//                        .tabItem { Label("List", systemImage: "list.bullet") }
-//                        .tag(Tab.medicationList)
+                    UserView()
+                        .tabItem { Label("User", systemImage: "person") }
+                        .tag(Tab.user)
                 }
                 .accentColor(.white)
             }
