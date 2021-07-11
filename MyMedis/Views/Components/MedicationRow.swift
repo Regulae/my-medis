@@ -19,7 +19,7 @@ struct MedicationRow: View {
         HStack {
             Button(action: { showDetail = true }) {
                 Text(medication.name!)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("textColor"))
                         .frame(maxWidth: .infinity, alignment: .leading)
             }
             if (!medication.taken) {
@@ -28,7 +28,7 @@ struct MedicationRow: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .aspectRatio(1 / 1, contentMode: .fit)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("textColor"))
                 }
             } else if (medication.taken) {
                 Button(action: unsetMedicationTaken) {
