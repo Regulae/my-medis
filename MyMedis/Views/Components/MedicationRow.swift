@@ -48,8 +48,8 @@ struct MedicationRow: View {
     }
 
     private func checkLastTaken() {
-        let daysFromTaken = userCalendar.dateComponents([.day], from: medication.lastTaken ?? Date(), to: now)
-        if daysFromTaken.day! > 1 {
+        let daysFromTaken = Calendar.current.isDate(medication.lastTaken ?? Date(), equalTo: now, toGranularity: .day)
+        if !daysFromTaken {
             medication.taken = false
         }
     }
