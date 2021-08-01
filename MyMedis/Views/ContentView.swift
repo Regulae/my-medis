@@ -11,63 +11,38 @@ import CoreData
 struct ContentView: View {
     @State private var selection: Tab = .medicationOverview
     @Environment(\.managedObjectContext) private var viewContext
-    
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Medication.timeStamp, ascending: true)], animation: .default) private var medications : FetchedResults<Medication>
-    
-    enum Tab{
+
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Medication.timeStamp, ascending: true)], animation: .default) private var medications: FetchedResults<Medication>
+
+    enum Tab {
         case medicationOverview
         case user
     }
-    
+
     init() {
         UITabBar.appearance().barTintColor = UIColor(named: "red")
         UITabBar.appearance().unselectedItemTintColor = UIColor.white.withAlphaComponent(0.6)
     }
-    
+
     var body: some View {
-        NavigationView{
-            VStack{
-                
-                TabView(selection: $selection){
-                    MedicationOverview(medications: medications, viewContext: viewContext)
-                        .tabItem { Label("Featured", systemImage: "calendar" )}
+        VStack {
+            TabView(selection: $selection) {
+                MedicationOverview(medications: medications, viewContext: viewContext)
+                        .tabItem {
+                            Label("Featured", systemImage: "calendar")
+                        }
                         .tag(Tab.medicationOverview)
-                    UserView()
-                        .tabItem { Label("User", systemImage: "person") }
+                UserView()
+                        .tabItem {
+                            Label("User", systemImage: "person")
+                        }
                         .tag(Tab.user)
-                }
-                .accentColor(.white)
             }
-            .navigationTitle("")
-            .navigationBarItems(leading:
-                                    HStack{
-                                        Image("logo_bg_transparent")
-                                            .resizable()
-                                            .frame(width: 80, height: 80)
-                                            .aspectRatio(1/1, contentMode: .fit)
-                                        Text("My Medis")
-                                            .font(.largeTitle)
-                                            .bold()
-                                            .padding(.vertical)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    },
-                                trailing: NavigationLink(
-                                    destination: AddMedicationView(),
-                                    label: {
-                                        Image(systemName: "plus")
-                                            .resizable()
-                                            .frame(width: 30, height: 30)
-                                            .aspectRatio(1/1, contentMode: .fit)
-                                            .foregroundColor(Color("red"))
-                                    })
-                                
-                                
-            )
-            
+                    .accentColor(.white)
         }
-        .accentColor(Color("red"))
-        .padding(.top, 0.0)
-        
+                .accentColor(Color("red"))
+                .padding(.top, 0.0)
+
     }
 }
 

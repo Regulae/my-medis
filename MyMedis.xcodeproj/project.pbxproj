@@ -36,6 +36,7 @@
 		C848546B5E41363AC3BFB1D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84852167582F270F5F22904 /* User.swift */; };
 		C8485593FD28AEAFC9E68E35 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */; };
 		C848568BB94985073666736F /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C848533700BD0DD85E54CE8F /* MedicationOverview.swift */; };
+		C8485C246C9F475A87974A46 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84853436EB22437515F8E2D /* EditUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		33BEBDEC26944977009F6EDF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C84852167582F270F5F22904 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C848533700BD0DD85E54CE8F /* MedicationOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationOverview.swift; sourceTree = "<group>"; };
+		C84853436EB22437515F8E2D /* EditUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 		C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailView.swift; sourceTree = "<group>"; };
 		C84855BE9794BCAE59E39580 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwissmedicMedicationsView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C84855BE9794BCAE59E39580 /* UserView.swift */,
+				C84853436EB22437515F8E2D /* EditUserView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				C8485394F458815BBD002EB9 /* MedicationDetailView.swift in Sources */,
 				C848546B5E41363AC3BFB1D9 /* User.swift in Sources */,
 				C84853CEBEB8524DDAFE6772 /* UserView.swift in Sources */,
+				C8485C246C9F475A87974A46 /* EditUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

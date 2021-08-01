@@ -36,55 +36,82 @@ struct MedicationOverview: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Text("Today")
-                        .font(.title)
-                        .bold()
-                        .padding(.bottom)
-                if morningMedications.count >= 1 {
-                    Text("Morning")
-                            .font(.title2)
-                    ForEach(morningMedications) { medication in
-                        MedicationRow(medication: medication)
-                    }
-                            .onDelete(perform: deleteMedications)
-                    Divider()
+        NavigationView {
+            VStack {
+                HStack {
+                    Image("logo_bg_transparent")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .aspectRatio(1 / 1, contentMode: .fit)
+                    Text("My Medis")
+                            .font(.largeTitle)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(
+                            destination: AddMedicationView(),
+                            label: {
+                                Image(systemName: "plus")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .aspectRatio(1 / 1, contentMode: .fit)
+                                        .foregroundColor(Color("red"))
+                            })
                 }
-                if lunchMedications.count >= 1 {
-                    Text("Lunch")
-                            .font(.title2)
+                        .padding()
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("Today")
+                                .font(.title)
+                                .bold()
+                                .padding(.bottom)
+                        if morningMedications.count >= 1 {
+                            Text("Morning")
+                                    .font(.title2)
+                            ForEach(morningMedications) { medication in
+                                MedicationRow(medication: medication)
+                            }
+                                    .onDelete(perform: deleteMedications)
+                            Divider()
+                        }
+                        if lunchMedications.count >= 1 {
+                            Text("Lunch")
+                                    .font(.title2)
 
-                    ForEach(lunchMedications) { medication in
-                        MedicationRow(medication: medication)
-                    }
-                            .onDelete(perform: deleteMedications)
-                    Divider()
-                }
-                if eveningMedications.count >= 1 {
-                    Text("Evening")
-                            .font(.title2)
-                    ForEach(eveningMedications) { medication in
-                        MedicationRow(medication: medication)
-                    }
-                            .onDelete(perform: deleteMedications)
-                    Divider()
+                            ForEach(lunchMedications) { medication in
+                                MedicationRow(medication: medication)
+                            }
+                                    .onDelete(perform: deleteMedications)
+                            Divider()
+                        }
+                        if eveningMedications.count >= 1 {
+                            Text("Evening")
+                                    .font(.title2)
+                            ForEach(eveningMedications) { medication in
+                                MedicationRow(medication: medication)
+                            }
+                                    .onDelete(perform: deleteMedications)
+                            Divider()
 
-                }
-                if nightMedications.count >= 1 {
-                    Text("Night")
-                            .font(.title2)
-                    ForEach(nightMedications) { medication in
-                        MedicationRow(medication: medication)
-                    }
-                            .onDelete(perform: deleteMedications)
-                    Divider()
-                }
+                        }
+                        if nightMedications.count >= 1 {
+                            Text("Night")
+                                    .font(.title2)
+                            ForEach(nightMedications) { medication in
+                                MedicationRow(medication: medication)
+                            }
+                                    .onDelete(perform: deleteMedications)
+                            Divider()
+                        }
 
-                Spacer()
+                        Spacer()
+                    }
+                            .padding(.horizontal)
+                }
             }
-                    .padding(.horizontal)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
         }
+                .accentColor(Color("red"))
     }
 
     private func deleteMedications(offsets: IndexSet) {

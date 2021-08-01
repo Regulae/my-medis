@@ -15,7 +15,7 @@ struct User {
     var age: Int16
     var language: Language
 
-    static let `default` = User(firstName: "Max", lastName: "Muster", gender: Gender.m, age:30, language: Language.de)
+//    static let `default` = User(firstName: "Max", lastName: "Muster", gender: Gender.m, age:30, language: Language.de)
 
     enum Gender: String, CaseIterable, Identifiable {
         case m = "Male"

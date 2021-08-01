@@ -31,58 +31,55 @@ struct AddMedicationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Text("Medication Name:")
-                    HStack {
-                        TextField("Medication Name", text: $medicationName)
-                        Button(action: { showingSearch = true }) {
-                            Image(systemName: "magnifyingglass")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                    .aspectRatio(1 / 1, contentMode: .fit)
-                                    .foregroundColor(Color("red"))
-                        }
+        VStack {
+            Form {
+                Text("Medication Name:")
+                HStack {
+                    TextField("Medication Name", text: $medicationName)
+                    Button(action: { showingSearch = true }) {
+                        Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .aspectRatio(1 / 1, contentMode: .fit)
+                                .foregroundColor(Color("red"))
                     }
-                    Text("Substances")
-                    TextField("Substances", text: $substances)
-                    Picker("Day Time", selection: $daytime) {
-                        Text("Morning").tag("Morning")
-                        Text("Lunch").tag("Lunch")
-                        Text("Evening").tag("Evening")
-                        Text("Night").tag("Night")
-                    }
+                }
+                Text("Substances")
+                TextField("Substances", text: $substances)
+                Picker("Day Time", selection: $daytime) {
+                    Text("Morning").tag("Morning")
+                    Text("Lunch").tag("Lunch")
+                    Text("Evening").tag("Evening")
+                    Text("Night").tag("Night")
+                }
 
-                }
-                HStack(alignment: .center) {
-                    Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                        Text("Cancel")
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 50)
-                                .padding(.vertical, 10)
-                    }
-                            .background(Color(.gray))
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                    Button(action: addMedication) {
-                        Text("Save")
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 50)
-                                .padding(.vertical, 10)
-                    }
-                            .background(Color("red"))
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-                        .padding(.bottom)
             }
-                    .navigationBarTitle("Add Medication")
-                    .sheet(isPresented: $showingSearch) {
-                        SwissmedicMedicationsView(searchText: "", showSearch: $showingSearch, medicationName: $medicationName, medicationSubstances: $substances, medicationAuthHolder: $authHolder)
-                    }
+            HStack(alignment: .center) {
+                Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+                    Text("Cancel")
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 10)
+                }
+                        .background(Color(.gray))
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                Button(action: addMedication) {
+                    Text("Save")
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 10)
+                }
+                        .background(Color("red"))
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+                    .padding(.bottom)
         }
-                .accentColor(Color("red"))
+                .navigationBarTitle("Add Medication")
+                .sheet(isPresented: $showingSearch) {
+                    SwissmedicMedicationsView(searchText: "", showSearch: $showingSearch, medicationName: $medicationName, medicationSubstances: $substances, medicationAuthHolder: $authHolder)
+                }
     }
 
     private func addMedication() {
