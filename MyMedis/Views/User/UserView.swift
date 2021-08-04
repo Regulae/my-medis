@@ -7,13 +7,45 @@
 //
 
 import SwiftUI
+import Combine
+
+class UserData: ObservableObject {
+
+    @Published var objectWillChange = PassthroughSubject<Void, Never>()
+
+    var firstName: String
+    var lastName: String
+    var gender: String
+    var age: String
+    var language: String
+
+    init(){
+        firstName = UserDefaults.standard.string(forKey: "firstName") ?? ""
+        lastName = UserDefaults.standard.string(forKey: "lastName") ?? ""
+        gender = UserDefaults.standard.string(forKey: "gender") ?? ""
+        age = UserDefaults.standard.string(forKey: "age") ?? ""
+        language = UserDefaults.standard.string(forKey: "language") ?? ""
+    }
+
+    func edit(firstName: String, lastName: String, gender: String, age: String, language: String){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.gender = gender
+        self.age = age
+        self.language = language
+        UserDefaults.standard.set(firstName, forKey: "firstName")
+        UserDefaults.standard.set(lastName, forKey: "lastName")
+        UserDefaults.standard.set(gender, forKey: "gender")
+        UserDefaults.standard.set(age, forKey: "age")
+        UserDefaults.standard.set(language, forKey: "language")
+        objectWillChange.send()
+    }
+
+}
 
 struct UserView: View {
-    @State var firstName = UserDefaults.standard.string(forKey: "firstName") ?? ""
-    @State var lastName = UserDefaults.standard.string(forKey: "lastName") ?? ""
-    @State var gender = UserDefaults.standard.string(forKey: "gender") ?? ""
-    @State var age = UserDefaults.standard.string(forKey: "age") ?? ""
-    @State var language = UserDefaults.standard.string(forKey: "language") ?? ""
+
+    @ObservedObject var userData = UserData()
 
     var body: some View {
         NavigationView {
@@ -24,7 +56,7 @@ struct UserView: View {
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .leading)
                     NavigationLink(
-                            destination: EditUserView(),
+                            destination: EditUserView(userData: userData),
                             label: {
                                 Image(systemName: "pencil")
                                         .resizable()
@@ -34,11 +66,11 @@ struct UserView: View {
                             })
                 }
                 Spacer()
-                Text("First Name: \(firstName)")
-                Text("Last Name: \(lastName)")
-                Text("Gender: \(gender == "Male" ? "♂" : "♀")")
-                Text("Age: \(age)")
-                Text("Language: \(language)")
+                Text("First Name: \(userData.firstName)")
+                Text("Last Name: \(userData.lastName)")
+                Text("Gender: \(userData.gender == "Male" ? "♂" : "♀")")
+                Text("Age: \(userData.age)")
+                Text("Language: \(userData.language)")
                 Spacer()
             }.font(.title3)
                     .navigationBarTitle("")

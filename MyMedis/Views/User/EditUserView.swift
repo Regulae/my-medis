@@ -9,11 +9,14 @@
 import SwiftUI
 
 struct EditUserView: View {
-    @State var firstName: String = UserDefaults.standard.string(forKey: "firstName") ?? ""
-    @State var lastName: String = UserDefaults.standard.string(forKey: "lastName") ?? ""
-    @State var gender: String = UserDefaults.standard.string(forKey: "gender") ?? "Male"
-    @State var age: String = UserDefaults.standard.string(forKey: "age") ?? ""
-    @State var language: String = UserDefaults.standard.string(forKey: "language") ?? "German"
+
+    var userData: UserData
+
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var gender: String = "Male"
+    @State var age: String = ""
+    @State var language: String = "German"
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -24,13 +27,13 @@ struct EditUserView: View {
                 TextField("First Name", text: $firstName)
                 Text("Last Name")
                 TextField("Last Name", text: $lastName)
-                Picker("Gender", selection: $gender){
+                Picker("Gender", selection: $gender) {
                     Text("Male").tag("Male")
                     Text("Female").tag("Female")
                 }
                 TextField("Age", text: $age)
                         .keyboardType(.numberPad)
-                Picker("Language", selection: $language){
+                Picker("Language", selection: $language) {
                     Text("German").tag("German")
                     Text("French").tag("French")
                     Text("Italian").tag("Italian")
@@ -59,15 +62,20 @@ struct EditUserView: View {
             }
                     .padding(.bottom)
         }
-        .navigationBarTitle("Edit User")
+                .onAppear(perform: fill)
+                .navigationBarTitle("Edit User")
+    }
+
+    private func fill() {
+        firstName = userData.firstName
+        lastName = userData.lastName
+        gender = userData.gender
+        age = userData.age
+        language = userData.language
     }
 
     private func editUser() {
-        UserDefaults.standard.set(firstName, forKey: "firstName")
-        UserDefaults.standard.set(lastName, forKey: "lastName")
-        UserDefaults.standard.set(gender, forKey: "gender")
-        UserDefaults.standard.set(age, forKey: "age")
-        UserDefaults.standard.set(language, forKey: "language")
+        self.userData.edit(firstName: firstName, lastName: lastName, gender: gender, age: age, language: language)
         self.presentationMode.wrappedValue.dismiss()
     }
 }
