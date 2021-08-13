@@ -67,11 +67,11 @@ struct EditUserView: View {
     }
 
     private func fill() {
-        firstName = userData.firstName
-        lastName = userData.lastName
-        gender = userData.gender
-        age = userData.age
-        language = userData.language
+        firstName = firstName != "" ? firstName : userData.firstName
+        lastName = lastName != "" ? lastName : userData.lastName
+        gender = gender != "" ? gender : (userData.gender == "" ? "Male" : userData.gender)
+        age = age != "" ? age : userData.age
+        language = language != "" ? language : (userData.language == "" ? "German" : userData.language)
     }
 
     private func editUser() {
