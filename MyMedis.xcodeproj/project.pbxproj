@@ -36,6 +36,7 @@
 		C848546B5E41363AC3BFB1D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84852167582F270F5F22904 /* User.swift */; };
 		C8485593FD28AEAFC9E68E35 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */; };
 		C848568BB94985073666736F /* MedicationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C848533700BD0DD85E54CE8F /* MedicationOverview.swift */; };
+		C848592B79484EE3342B044A /* EditMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8485C74C9A21F65981A960F /* EditMedicationView.swift */; };
 		C8485C246C9F475A87974A46 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84853436EB22437515F8E2D /* EditUserView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailView.swift; sourceTree = "<group>"; };
 		C84855BE9794BCAE59E39580 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwissmedicMedicationsView.swift; sourceTree = "<group>"; };
+		C8485C74C9A21F65981A960F /* EditMedicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMedicationView.swift; sourceTree = "<group>"; };
 		C8485FE806FF576DDE7277F5 /* AddMedicationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 				C848533700BD0DD85E54CE8F /* MedicationOverview.swift */,
 				C84858DF41E9C451489CE319 /* SwissmedicMedicationsView.swift */,
 				C84854BC5AB15D4CAAC9A9B9 /* MedicationDetailView.swift */,
+				C8485C74C9A21F65981A960F /* EditMedicationView.swift */,
 			);
 			path = Medication;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				C848546B5E41363AC3BFB1D9 /* User.swift in Sources */,
 				C84853CEBEB8524DDAFE6772 /* UserView.swift in Sources */,
 				C8485C246C9F475A87974A46 /* EditUserView.swift in Sources */,
+				C848592B79484EE3342B044A /* EditMedicationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

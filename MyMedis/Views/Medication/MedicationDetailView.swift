@@ -14,30 +14,46 @@ struct MedicationDetailView: View {
     var medication: Medication
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("Detail")
-                        .font(.largeTitle)
-                        .bold()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                Button(action: deleteMedication) {
-                    Image(systemName: "trash")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .aspectRatio(1 / 1, contentMode: .fit)
-                            .foregroundColor(Color("red"))
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Detail")
+                            .font(.largeTitle)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    NavigationLink(
+                            destination: EditMedicationView(viewContext: viewContext, medication: medication),
+                            label: {
+                                Image(systemName: "pencil")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .aspectRatio(1 / 1, contentMode: .fit)
+                                        .foregroundColor(Color("red"))
+                            })
+                    Button(action: deleteMedication) {
+                        Image(systemName: "trash")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .aspectRatio(1 / 1, contentMode: .fit)
+                                .foregroundColor(Color("red"))
+                    }
                 }
+                Spacer()
+                Text(medication.name ?? "")
+                        .font(.largeTitle)
+                if medication.substances != "" {
+                    Text("Substances: \(medication.substances ?? "")")
+                }
+                if medication.authHolder != nil {
+                    Text("Authorization Holder: \(medication.authHolder ?? "")")
+                }
+                Spacer()
             }
-            Text(medication.name ?? "")
-                    .font(.largeTitle)
-            if medication.substances != "" {
-                Text("Substances: \(medication.substances ?? "")")
-            }
-            if medication.authHolder != nil {
-                Text("Authorization Holder: \(medication.authHolder ?? "")")
-            }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .padding()
         }
-                .padding()
+                .accentColor(Color("red"))
     }
 
     private func deleteMedication() {
