@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MedicationRow: View {
     @State private var showDetail = false
+    var viewContext: NSManagedObjectContext
 
     let userCalendar = Calendar.current
     let now = Date()
     let medication: Medication
-    @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
         HStack {
@@ -43,7 +44,7 @@ struct MedicationRow: View {
         }
                 .onAppear(perform: checkLastTaken)
                 .sheet(isPresented: $showDetail) {
-                    MedicationDetailView(medication: medication)
+                    MedicationDetailView(viewContext: viewContext, medication: medication)
                 }
     }
 

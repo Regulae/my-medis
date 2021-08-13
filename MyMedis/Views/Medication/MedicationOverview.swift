@@ -68,7 +68,7 @@ struct MedicationOverview: View {
                             Text("Morning")
                                     .font(.title2)
                             ForEach(morningMedications) { medication in
-                                MedicationRow(medication: medication)
+                                MedicationRow(viewContext: viewContext, medication: medication)
                             }
                                     .onDelete(perform: deleteMedications)
                             Divider()
@@ -78,7 +78,7 @@ struct MedicationOverview: View {
                                     .font(.title2)
 
                             ForEach(lunchMedications) { medication in
-                                MedicationRow(medication: medication)
+                                MedicationRow(viewContext: viewContext, medication: medication)
                             }
                                     .onDelete(perform: deleteMedications)
                             Divider()
@@ -87,7 +87,7 @@ struct MedicationOverview: View {
                             Text("Evening")
                                     .font(.title2)
                             ForEach(eveningMedications) { medication in
-                                MedicationRow(medication: medication)
+                                MedicationRow(viewContext: viewContext, medication: medication)
                             }
                                     .onDelete(perform: deleteMedications)
                             Divider()
@@ -97,7 +97,7 @@ struct MedicationOverview: View {
                             Text("Night")
                                     .font(.title2)
                             ForEach(nightMedications) { medication in
-                                MedicationRow(medication: medication)
+                                MedicationRow(viewContext: viewContext, medication: medication)
                             }
                                     .onDelete(perform: deleteMedications)
                             Divider()
