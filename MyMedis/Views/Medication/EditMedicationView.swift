@@ -15,7 +15,7 @@ struct EditMedicationView: View {
 
     @State var medicationName: String = ""
     @State var substances: String = ""
-    @State var daytime: String = "Morning"
+    @State var daytime: String = ""
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 

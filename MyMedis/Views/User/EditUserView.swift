@@ -14,9 +14,9 @@ struct EditUserView: View {
 
     @State var firstName: String = ""
     @State var lastName: String = ""
-    @State var gender: String = "Male"
+    @State var gender: String = ""
     @State var age: String = ""
-    @State var language: String = "Deutsch"
+    @State var language: String = ""
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
