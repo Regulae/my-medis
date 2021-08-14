@@ -30,6 +30,7 @@ struct MedicationDetailView: View {
                                         .aspectRatio(1 / 1, contentMode: .fit)
                                         .foregroundColor(Color("red"))
                             })
+                    .padding(.trailing)
                     Button(action: deleteMedication) {
                         Image(systemName: "trash")
                                 .resizable()

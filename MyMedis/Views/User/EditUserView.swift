@@ -16,7 +16,7 @@ struct EditUserView: View {
     @State var lastName: String = ""
     @State var gender: String = "Male"
     @State var age: String = ""
-    @State var language: String = "German"
+    @State var language: String = "Deutsch"
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -34,9 +34,9 @@ struct EditUserView: View {
                 TextField("Age", text: $age)
                         .keyboardType(.numberPad)
                 Picker("Language", selection: $language) {
-                    Text("German").tag("German")
-                    Text("French").tag("French")
-                    Text("Italian").tag("Italian")
+                    Text("Deutsch").tag("Deutsch")
+                    Text("Français").tag("Français")
+                    Text("Italiano").tag("Italiano")
                     Text("English").tag("English")
                 }
             }
@@ -71,7 +71,7 @@ struct EditUserView: View {
         lastName = lastName != "" ? lastName : userData.lastName
         gender = gender != "" ? gender : (userData.gender == "" ? "Male" : userData.gender)
         age = age != "" ? age : userData.age
-        language = language != "" ? language : (userData.language == "" ? "German" : userData.language)
+        language = language != "" ? language : (userData.language == "" ? "Deutsch" : userData.language)
     }
 
     private func editUser() {
