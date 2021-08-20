@@ -29,12 +29,12 @@ struct ContentView: View {
             TabView(selection: $selection) {
                 MedicationOverview(medications: medications, viewContext: viewContext)
                         .tabItem {
-                            Label("Featured", systemImage: "calendar")
+                            Label("Medikamente", systemImage: "calendar")
                         }
                         .tag(Tab.medicationOverview)
                 UserView()
                         .tabItem {
-                            Label("User", systemImage: "person")
+                            Label("Benutzer", systemImage: "person")
                         }
                         .tag(Tab.user)
             }

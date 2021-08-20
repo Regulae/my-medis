@@ -24,7 +24,7 @@ struct SwissmedicMedicationsView: View {
                 Button(action: {
                     self.medicationName = item.name
                     self.medicationSubstances = item.substances ?? ""
-                    self.medicationAuthHolder = item.authHolder ?? ""
+                    self.medicationAuthHolder = item.authHolder
                     self.showSearch = false
                 }) {
                     Text(item.name)

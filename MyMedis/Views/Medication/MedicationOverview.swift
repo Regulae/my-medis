@@ -60,12 +60,12 @@ struct MedicationOverview: View {
                         .padding()
                 ScrollView {
                     VStack(alignment: .leading) {
-                        Text("Today")
+                        Text("Heute")
                                 .font(.title)
                                 .bold()
                                 .padding(.bottom)
                         if morningMedications.count >= 1 {
-                            Text("Morning")
+                            Text("Morgen")
                                     .font(.title2)
                             ForEach(morningMedications) { medication in
                                 MedicationRow(viewContext: viewContext, medication: medication)
@@ -73,7 +73,7 @@ struct MedicationOverview: View {
                             Divider()
                         }
                         if lunchMedications.count >= 1 {
-                            Text("Lunch")
+                            Text("Mittag")
                                     .font(.title2)
 
                             ForEach(lunchMedications) { medication in
@@ -82,7 +82,7 @@ struct MedicationOverview: View {
                             Divider()
                         }
                         if eveningMedications.count >= 1 {
-                            Text("Evening")
+                            Text("Abend")
                                     .font(.title2)
                             ForEach(eveningMedications) { medication in
                                 MedicationRow(viewContext: viewContext, medication: medication)
@@ -91,7 +91,7 @@ struct MedicationOverview: View {
 
                         }
                         if nightMedications.count >= 1 {
-                            Text("Night")
+                            Text("Nacht")
                                     .font(.title2)
                             ForEach(nightMedications) { medication in
                                 MedicationRow(viewContext: viewContext, medication: medication)

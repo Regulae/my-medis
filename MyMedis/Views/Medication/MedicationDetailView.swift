@@ -43,10 +43,10 @@ struct MedicationDetailView: View {
                 Text(medication.name ?? "")
                         .font(.largeTitle)
                 if medication.substances != "" {
-                    Text("Substances: \(medication.substances ?? "")")
+                    Text("Wirkstoff: \(medication.substances ?? "")")
                 }
                 if medication.authHolder != nil {
-                    Text("Authorization Holder: \(medication.authHolder ?? "")")
+                    Text("Zulassungsinhaber: \(medication.authHolder ?? "")")
                 }
                 Spacer()
             }

@@ -33,9 +33,9 @@ struct AddMedicationView: View {
     var body: some View {
         VStack {
             Form {
-                Text("Medication Name:")
+                Text("Medikamentenname:")
                 HStack {
-                    TextField("Medication Name", text: $medicationName)
+                    TextField("Medikamentenname", text: $medicationName)
                     Button(action: { showingSearch = true }) {
                         Image(systemName: "magnifyingglass")
                                 .resizable()
@@ -44,19 +44,19 @@ struct AddMedicationView: View {
                                 .foregroundColor(Color("red"))
                     }
                 }
-                Text("Substances")
-                TextField("Substances", text: $substances)
-                Picker("Day Time", selection: $daytime) {
-                    Text("Morning").tag("Morning")
-                    Text("Lunch").tag("Lunch")
-                    Text("Evening").tag("Evening")
-                    Text("Night").tag("Night")
+                Text("Wirkstoff")
+                TextField("Wirkstoff", text: $substances)
+                Picker("Einnahmezeit", selection: $daytime) {
+                    Text("Morgen").tag("Morning")
+                    Text("Mittag").tag("Lunch")
+                    Text("Abend").tag("Evening")
+                    Text("Nacht").tag("Night")
                 }
 
             }
             HStack(alignment: .center) {
                 Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                    Text("Cancel")
+                    Text("Abbrechen")
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 50)
                             .padding(.vertical, 10)
@@ -65,7 +65,7 @@ struct AddMedicationView: View {
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 Button(action: addMedication) {
-                    Text("Save")
+                    Text("Speichern")
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 50)
                             .padding(.vertical, 10)
@@ -76,7 +76,7 @@ struct AddMedicationView: View {
             }
                     .padding(.bottom)
         }
-                .navigationBarTitle("Add Medication")
+                .navigationBarTitle("Hinzufügen")
                 .sheet(isPresented: $showingSearch) {
                     SwissmedicMedicationsView(searchText: "", showSearch: $showingSearch, medicationName: $medicationName, medicationSubstances: $substances, medicationAuthHolder: $authHolder)
                 }

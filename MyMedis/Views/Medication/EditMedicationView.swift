@@ -22,21 +22,21 @@ struct EditMedicationView: View {
     var body: some View {
         VStack {
             Form {
-                Text("Medication Name:")
-                TextField("Medication Name", text: $medicationName)
-                Text("Substances")
-                TextField("Substances", text: $substances)
-                Picker("Day Time", selection: $daytime) {
-                    Text("Morning").tag("Morning")
-                    Text("Lunch").tag("Lunch")
-                    Text("Evening").tag("Evening")
-                    Text("Night").tag("Night")
+                Text("Medikamentenname:")
+                TextField("Medikamentenname", text: $medicationName)
+                Text("Wirkstoff")
+                TextField("Wirkstoff", text: $substances)
+                Picker("Einnahmezeit", selection: $daytime) {
+                    Text("Morgen").tag("Morning")
+                    Text("Mittag").tag("Lunch")
+                    Text("Abend").tag("Evening")
+                    Text("Nacht").tag("Night")
                 }
 
             }
             HStack(alignment: .center) {
                 Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                    Text("Cancel")
+                    Text("Abbrechen")
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 50)
                             .padding(.vertical, 10)
@@ -45,7 +45,7 @@ struct EditMedicationView: View {
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 Button(action: editMedication) {
-                    Text("Save")
+                    Text("Speichern")
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 50)
                             .padding(.vertical, 10)
@@ -57,13 +57,13 @@ struct EditMedicationView: View {
                     .padding(.bottom)
         }
                 .onAppear(perform: fill)
-                .navigationBarTitle("Edit Medication")
+                .navigationBarTitle("Bearbeiten")
     }
 
     private func fill() {
         medicationName = medicationName != "" ? medicationName : (medication.name ?? "")
         substances = substances != "" ? substances : (medication.substances ?? "")
-        daytime = daytime != "" ? daytime: (medication.daytime == "" ? "Morning" : (medication.daytime ?? ""))
+        daytime = daytime != "" ? daytime : (medication.daytime == "" ? "Morning" : (medication.daytime ?? ""))
     }
 
     private func editMedication() {
@@ -71,7 +71,7 @@ struct EditMedicationView: View {
             medication.name = medicationName
             medication.substances = substances
             medication.daytime = daytime
-            do{
+            do {
                 try viewContext.save()
                 self.presentationMode.wrappedValue.dismiss()
             } catch {

@@ -51,7 +51,7 @@ struct UserView: View {
         NavigationView {
             VStack{
                 HStack {
-                    Text("User")
+                    Text("Benutzer")
                             .font(.largeTitle)
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -66,11 +66,11 @@ struct UserView: View {
                             })
                 }
                 Spacer()
-                Text("First Name: \(userData.firstName)")
-                Text("Last Name: \(userData.lastName)")
-                Text("Gender: \(userData.gender == "Male" ? "♂" : "♀")")
-                Text("Age: \(userData.age)")
-                Text("Language: \(userData.language)")
+                Text("Vorname: \(userData.firstName)")
+                Text("Nachname: \(userData.lastName)")
+                Text("Geschlecht: \(userData.gender == "Male" ? "♂" : "♀")")
+                Text("Alter: \(userData.age)")
+                Text("Sprache: \(userData.language)")
                 Spacer()
             }.font(.title3)
                     .navigationBarTitle("")
