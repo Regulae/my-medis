@@ -75,8 +75,8 @@ struct UserView: View {
             }.font(.title3)
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
+            .padding()
         }
                 .accentColor(Color("red"))
-                .padding()
     }
 }
