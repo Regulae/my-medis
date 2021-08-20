@@ -8,18 +8,6 @@
 import SwiftUI
 import CoreData
 
-extension Date {
-    static var tomorrow: Date {
-        return Date().dayAfter
-    }
-    var dayAfter: Date {
-        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
-    }
-    var noon: Date {
-        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-    }
-}
-
 struct AddMedicationView: View {
     @State var medicationName: String = ""
     @State var substances: String = ""
@@ -90,7 +78,6 @@ struct AddMedicationView: View {
             newItem.substances = substances
             newItem.timeStamp = now
             newItem.daytime = daytime
-            newItem.takeNext = Date.tomorrow
             newItem.taken = false
             newItem.authHolder = authHolder
             do {

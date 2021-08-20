@@ -110,10 +110,3 @@ struct MedicationOverview: View {
                 .accentColor(Color("red"))
     }
 }
-
-private let timeFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()

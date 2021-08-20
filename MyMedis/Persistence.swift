@@ -18,7 +18,6 @@ struct PersistenceController {
             newItem.name = ""
             newItem.substances = ""
             newItem.timeStamp = Date()
-            newItem.takeNext = Date()
             newItem.daytime = "Morning"
             newItem.taken = false
         }
