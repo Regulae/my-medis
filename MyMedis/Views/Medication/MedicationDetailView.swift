@@ -45,7 +45,7 @@ struct MedicationDetailView: View {
                 if medication.substances != "" {
                     Text("Wirkstoff: \(medication.substances ?? "")")
                 }
-                if medication.authHolder != nil {
+                if medication.authHolder != "" {
                     Text("Zulassungsinhaber: \(medication.authHolder ?? "")")
                 }
                 Spacer()
