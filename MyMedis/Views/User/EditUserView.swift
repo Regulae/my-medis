@@ -31,6 +31,7 @@ struct EditUserView: View {
                     Text("Männlich").tag("Male")
                     Text("Weiblich").tag("Female")
                 }
+                Text("Alter")
                 TextField("Alter", text: $age)
                         .keyboardType(.numberPad)
                 Picker("Sprache", selection: $language) {
