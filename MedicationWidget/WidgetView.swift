@@ -85,9 +85,3 @@ struct WidgetView: View {
         .padding()
     }
 }
-
-struct WidgetView_Previews: PreviewProvider {
-    static var previews: some View {
-        WidgetView()
-    }
-}
